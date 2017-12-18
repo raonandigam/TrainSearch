@@ -38,12 +38,13 @@ public class TrainSearch extends HttpServlet {
 		out.println("<head>");
 		out.println("</head>");
 		out.println("<body>");
+		out.println("<center>");
 		out.println("<form action=\"Search\" method=\"POST\"><br>");
 		out.print(" <label>Source Station:</label>");
 		out.print("<Input type=\"textbox\"><br>");
 		
 		out.print("<label>Destination Station:</label>");
-		out.print("<Input type=\"textbox\"><br>");
+		out.print("<Input type=\"textbox\" size=\"2000px\"  color=\"red\"> <br>");
 		
 		out.print("<label>Date:</label>");
 		out.print("<input type=\"Date\"><br>");
@@ -51,6 +52,8 @@ public class TrainSearch extends HttpServlet {
 		
 		out.print("<input type=\"Submit\">");
 		
+		
+		out.println("</center>");
 		out.println("</form>");
 		out.println("</body>");
 		out.println("</html>");
