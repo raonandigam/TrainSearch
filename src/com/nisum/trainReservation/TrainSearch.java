@@ -39,18 +39,20 @@ public class TrainSearch extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<center>");
-		out.println("<form action=\"Search\" method=\"POST\"><br>");
-		out.print(" <label>Source Station:</label>");
-		out.print("<Input type=\"textbox\"><br>");
-		
-		out.print("<label>Destination Station:</label>");
-		out.print("<Input type=\"textbox\" size=\"2000px\"  color=\"red\"> <br>");
-		
-		out.print("<label>Date:</label>");
-		out.print("<input type=\"Date\"><br>");
+		out.println("<form action=\"Search\" method=\"POST\"><br><br>");
 		
 		
-		out.print("<input type=\"Submit\">");
+		out.println(" <label>Source Station:</label>");
+		out.println("<Input type=\"textbox\"><br><br>");
+		
+		out.println("<label>Destination Station:</label>");
+		out.println("<Input type=\"textbox\" size=\"2000px\" style=\"color:red\"> <br><br>");
+		
+		out.println("<label>Date:</label>");
+		out.println("<input type=\"Date\"><br><br>");
+		
+		
+		out.println("<input type=\"Submit\">");
 		
 		
 		out.println("</center>");
