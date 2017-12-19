@@ -1,16 +1,14 @@
-@charset "ISO-8859-1";
-<html>
-<head>
-	body{
+
+
+
+	.body{
 	 background-color: lightgreen;  
 	 float:left;
 	 Padding:auto;
 	 color:red;
 	 border-style:solid;
+	 font-family:"georgia"
 	  
 }
 
-</head>
-<body>
-</body>
-</html>
+

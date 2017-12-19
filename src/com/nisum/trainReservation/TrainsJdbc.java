@@ -25,7 +25,7 @@ public class TrainsJdbc {
 		  List<Train> trains = new ArrayList();
 		  while(rs.next()) {
 			  Train train = new Train(rs.getString("TrainName"),rs.getInt("TrainNumber"));
-			  trains.add(train);
+			  System.out.println(train);
 		  }
 		  System.out.println(rs.isFirst());
 		 
