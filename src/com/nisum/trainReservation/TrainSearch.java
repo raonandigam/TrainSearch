@@ -36,9 +36,14 @@ public class TrainSearch extends HttpServlet {
 		
 		out.println("<html>");
 		out.println("<head>");
+		
+		out.println("<link rel='stylesheet' type='text/css' href='Train.css' />");
 		out.println("</head>");
 		out.println("<body>");
+	
 		out.println("<center>");
+		
+		
 		out.println("<form action=\"Search\" method=\"POST\"><br><br>");
 		
 		
@@ -46,7 +51,7 @@ public class TrainSearch extends HttpServlet {
 		out.println("<Input type=\"textbox\"><br><br>");
 		
 		out.println("<label>Destination Station:</label>");
-		out.println("<Input type=\"textbox\" size=\"2000px\" style=\"color:red\"> <br><br>");
+		out.println("<Input type=\"textbox\"<br><br><br>");
 		
 		out.println("<label>Date:</label>");
 		out.println("<input type=\"Date\"><br><br>");
@@ -62,6 +67,11 @@ public class TrainSearch extends HttpServlet {
 		
 		
 		out.close();
+		
+	}
+
+	private void url(String string) {
+		// TODO Auto-generated method stub
 		
 	}
 
