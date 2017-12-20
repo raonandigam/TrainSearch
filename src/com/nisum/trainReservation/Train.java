@@ -5,7 +5,7 @@ public class Train {
 	int number;
 	String source;
 	String destination;
-	public Train(String name,int number) {
+	public Train(String name,int number,String source,String destination) {
 		this.name=name;
 		this.number=number;
 		this.source=source;
@@ -20,13 +20,21 @@ public class Train {
 		return this.number;
 	}
 	
-	public String getsource() {
+	public String getSource() {
 		return this.source;
 		
 	}
-	public String getdestination() {
+	public String getDestination() {
 		return this.destination;
 	}
+
+	@Override
+	public String toString() {
+		return "Train [name=" + name + ", number=" + number + ", source=" + source + ", destination=" + destination
+				+ "]";
+	}
+	
+	
 
 
 }

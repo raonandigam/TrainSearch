@@ -21,16 +21,28 @@ public class TrainsJdbc {
 	  public List<Train> getTrains() throws SQLException {
 		  Connection con = getConnection();
 		  Statement stmt = con.createStatement();
-		  ResultSet rs = stmt.executeQuery("select * from Train.Trains");
+		  ResultSet rs = stmt.executeQuery("select * from Trains");
 		  List<Train> trains = new ArrayList();
 		  while(rs.next()) {
-			  Train train = new Train(rs.getString("TrainName"),rs.getInt("TrainNumber"));
+			  Train train = new Train(rs.getString("TrainName"),rs.getInt("TrainNumber"),rs.getString("source"),rs.getString("destination"));
+			  trains.add(train);
 			  System.out.println(train);
 		  }
-		  System.out.println(rs.isFirst());
+		  return trains;
+	  }
+	  public List<Train> getTrains(String source,String destination) throws SQLException {
+		  Connection con = getConnection();
+		  Statement stmt = con.createStatement();
+		  ResultSet rs = stmt.executeQuery("select * from Trains where Source='"+source+"' and Destination='"+destination+"'" );
+		  List<Train> trains = new ArrayList();
+		  while(rs.next()) {
+			  Train train = new Train(rs.getString("TrainName"),rs.getInt("TrainNumber"),rs.getString("source"),rs.getString("destination"));
+			  trains.add(train);
+			  System.out.println(train);
+		  }
+		 
 		 
 		  return trains;
 		  
 	  }
-
 }

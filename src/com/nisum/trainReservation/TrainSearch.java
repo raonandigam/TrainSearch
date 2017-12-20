@@ -48,10 +48,10 @@ public class TrainSearch extends HttpServlet {
 		
 		
 		out.println(" <label>Source Station:</label>");
-		out.println("<Input type=\"textbox\"><br><br>");
+		out.println("<Input type=\"textbox\" name=\"Source\"><br><br>");
 		
 		out.println("<label>Destination Station:</label>");
-		out.println("<Input type=\"textbox\"<br><br><br>");
+		out.println("<Input type=\"textbox\" name=\"Destination\"<br><br><br>");
 		
 		out.println("<label>Date:</label>");
 		out.println("<input type=\"Date\"><br><br>");
@@ -81,13 +81,16 @@ public class TrainSearch extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		System.out.println(request.getParameter("Source"));
+		System.out.println(request.getParameter("Destination"));
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
 		TrainService trainService=new TrainService();
 		List<Train> trains = null;
 		try {
-			trains = trainService.getTrains();
+			trains = trainService.getTrainsBySource(request.getParameter("Source"),request.getParameter("Destination"));
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -95,7 +98,7 @@ public class TrainSearch extends HttpServlet {
 		
 		out.println("<label>Train Names</label>");
 	    for(Train train :trains) {
-	    	out.println(train.getNumber()+"-"+train.getName());
+	    	out.println(train.getNumber()+"-"+train.getName()+"-"+train.getSource()+"-"+train.getDestination());
 	    }
 		out.close();
 		
