@@ -1,5 +1,11 @@
 body {
-	 background-color: lightgreen;  	 
+	 background-color: White;  
+	 background-image: url("https://images4.alphacoders.com/150/150168.jpg");
+     background-size: cover;
+     font-family: sans-serif;
+     color: blue;
+     
+      
 }
 
 
