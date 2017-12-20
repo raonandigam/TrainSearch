@@ -11,44 +11,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class TrainSearch
- */
+
 @WebServlet("/TrainSearch")
 public class TrainSearch extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	private static final long serialVersionUID = 1L; 
     public TrainSearch() {
-        super();
-        // TODO Auto-generated constructor stub
+        super();  
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>");
-		
-		out.println("<h1>Railway Passenger Enquiry</h1>");
+		out.println("<title>");		
+		out.println("Railway");
 		out.println("</title>");
 		out.println("<link rel='stylesheet' type='text/css' href='Train.css' />");
 		out.println("</head>");
 		out.println("<body>");
-	
-		out.println("<center>");
-		
-		
-		out.println("<form action=\"Search\" method=\"POST\"><br><br>");
-		
+		out.println("<center>");	
+		out.println("<form action=\"Search\" method=\"POST\"><br><br>");	
 		out.println("<table>");
 		out.println("<tr>");
 		out.println(" <th><label>Source Station:</label></th>");
@@ -76,19 +61,10 @@ public class TrainSearch extends HttpServlet {
 		
 	}
 
-	private void url(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		System.out.println(request.getParameter("Source"));
-		System.out.println(request.getParameter("Destination"));
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
@@ -98,7 +74,6 @@ public class TrainSearch extends HttpServlet {
 			trains = trainService.getTrainsBySource(request.getParameter("Source"),request.getParameter("Destination"));
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -18,18 +18,21 @@ public class TrainsJdbc {
 	        }catch(Exception e){System.out.println(e);}  
 	        return con;  
 	    }  
+	  
+	  
 	  public List<Train> getTrains() throws SQLException {
 		  Connection con = getConnection();
 		  Statement stmt = con.createStatement();
 		  ResultSet rs = stmt.executeQuery("select * from Trains");
-		  List<Train> trains = new ArrayList();
+		  List<Train> trains = new ArrayList<Train>();
 		  while(rs.next()) {
 			  Train train = new Train(rs.getString("TrainName"),rs.getInt("TrainNumber"),rs.getString("source"),rs.getString("destination"));
 			  trains.add(train);
-			  System.out.println(train);
 		  }
 		  return trains;
 	  }
+	  
+	  
 	  public List<Train> getTrains(String source,String destination) throws SQLException {
 		  Connection con = getConnection();
 		  Statement stmt = con.createStatement();
@@ -37,12 +40,9 @@ public class TrainsJdbc {
 		  List<Train> trains = new ArrayList();
 		  while(rs.next()) {
 			  Train train = new Train(rs.getString("TrainName"),rs.getInt("TrainNumber"),rs.getString("source"),rs.getString("destination"));
-			  trains.add(train);
-			  System.out.println(train);
-		  }
-		 
-		 
-		  return trains;
-		  
+			  trains.add(train);		  
+		  }	  
+		  return trains;	  
 	  }
+	  
 }
